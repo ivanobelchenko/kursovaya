@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Admin</title>
+</head>
+<body>
+  <header>
+    <a class="logo">Курсовая</a>
+    <nav id="nav">
+      <p><a href="/">Заказы</a></p>
+      <p><a href="/cooks">Повара</a></p>
+      <p><a href="/loginPage">Войти</a></p>
+      <p><a href="/register">Регистрация</a></p>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>Если в вашу компанию устроился новый повар добавьте его с помощью формы ниже</h1>
+    {{!-- username: req.body.username,
+    password: req.body.password,
+    name: req.body.name --}}
+    <form action="/createCookAndKitchen" method="POST">
+      <label for="username">Имя</label>
+      <input type="text" name="username" id="username" placeholder="Александр"> 
+      <label for="kitchen_model">Название кухни</label>
+      <input type="text" name="kitchen_model" id="kitchen_model" placeholder="Название кухни"> 
+      <label for="kitchen_number">Номер кухни</label>
+      <input type="text" name="kitchen_number" id="kitchen_number" placeholder="Номер кухни"> 
+      <input type="submit" value="Добавить">
+    </form>
+    
+    <h2>Изменить данные какого-то из поваров</h2>
+    
+    <form action="/updateCookAndKitchen" method="POST">
+      <select name="id" id="cook_id"></select>
+      <label for="username">Имя</label>
+      <input type="text" name="username" id="username" placeholder="Александр"> 
+      <label for="kitchen_model">Название кухни</label>
+      <input type="text" name="kitchen_model" id="kitchen_model" placeholder="Название кухни"> 
+      <label for="kitchen_number">Номер кухни</label>
+      <input type="text" name="kitchen_number" id="kitchen_number" placeholder="Номер кухни"> 
+      <input type="submit" value="Добавить">
+    </form>
+    
+    <h2>Удалить повара</h2>
+    <form action="/deleteCookAndKitchen" method="POST">
+      <select name="id" id="cook_id_delete"></select>
+      <input type="submit" value="Удалить">
+    </form>
+    
+    <h2>Список поваров</h2>
+    
+    <table id="orders-table">
+      <tr>
+        <th>Повар</th>
+        <th>Кухня</th>
+        <th>Занят</th>
+      </tr>
+    </table>
+    
+  </main>
+  
+  <script src="js/script.js"></script>
+  <script src="/js/cooks.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

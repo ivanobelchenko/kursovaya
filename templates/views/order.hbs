@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Order</title>
+</head>
+<body>
+  <header>
+    <a class="logo">Курсовая</a>
+    <nav id="nav">
+      <p><a href="/">Заказы</a></p>
+      <p><a href="/cooks">Повара</a></p>
+      <p><a href="/loginPage">Войти</a></p>
+      <p><a href="/register">Регистрация</a></p>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>Сделать заказ на оценку рецепта</h1>
+    
+    <form action="/createOrder" method="POST">
+      <label for="text_title">Название рецепта</label>
+      <input type="text" name="text_title" id="text_title" placeholder="Название"> 
+      <label for="text">Сам рецепт</label>
+      <textarea type="text" name="text" id="text" placeholder="Жил да был..."> </textarea>
+      <input type="hidden" id="user_id_input" name="user_id">
+      <input type="submit" value="Создать">
+    </form>
+    
+    <h2>Заказы</h2>
+    <table id="orders-table">
+      <tr>
+        <th>Рецепт</th>
+        <th>Повар</th>
+        <th>Пользователь</th>
+      </tr>
+    </table>
+    
+  </main>
+  
+  <script src="js/script.js"></script>
+  <script src="js/order.js"></script>
+  <script src="js/orders.js"></script>
+</body>
+</html>
